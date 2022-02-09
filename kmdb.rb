@@ -94,6 +94,7 @@ Role.destroy_all
 # Do not use hard-coded foreign key IDs.
 # TODO!
 
+#nolan comes first
 #nolans = Artist.where({ name: "Christopher Nolan"}).[0]
 nolan = Artist.new
 nolan.name = "Christopher Nolan"
@@ -263,7 +264,6 @@ kyledk.character_name = "Selina Kyle"
 kyledk.save
 
 
-
 puts "There are #{Movie.all.count} movies. Should be 3" 
 puts "There are #{Artist.all.count} artists. Should be 12"
 puts "There are #{Role.all.count} roles. Should be 15."
@@ -284,18 +284,6 @@ for movie in movies
     puts "#{movie.title} #{movie.year_released} #{movie.rating}  #{director.name}" #fixed this link
 end
 
-
-
-
-# companies = Company.all
-# for company in companies
-#     puts company.name
-#     contacts = company.contacts
-#     for contact in contacts
-#         puts "#{contact.first_name} #{contact.last_name} - #{contact.email}"
-#     end
-#     puts ""
-# end
 # Prints a header for the cast output
 puts ""
 puts "Top Cast"
@@ -304,12 +292,6 @@ puts ""
 
 # Query the cast data and loop through the results to display the cast output for each movie
 # TODO!
-# artists = Artist.all
-# for artist in artists
-#     for role in roles
-#     puts "#{movie.title}, #{artist.name} #{role.character_name}"
-#     end
-# end
 
 #use this
 for role in roles
@@ -317,3 +299,15 @@ for role in roles
     actor = Artist.where({ id: role.artist_id})[0]
     puts "#{movie_for_role.title} #{actor.name} #{role.character_name}"
 end 
+
+
+#extra notes below
+# artists = Artist.all
+# for artist in artists
+#     for role in roles
+#     puts "#{movie.title}, #{artist.name} #{role.character_name}"
+#     end
+# end
+
+
+
